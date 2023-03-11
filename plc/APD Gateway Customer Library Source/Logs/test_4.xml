@@ -1,0 +1,7 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type='text/xsl' href='MassDataHandlerLogFile.xsl'?>
+<LogFile titleName="test_4.xml" projectName="G:\dev\Profinet_to_ADP_Customer_Libraries\output\test.xlsx" typeText="Type" messageText="Message" timeText="Time">
+  <LogEntry type="Warning" dateTime="12:12:24 PM">
+    <Message>The version ID is missing in the XLSX file. It is assumed that this is the latest version.</Message>
+  </LogEntry>
+</LogFile>

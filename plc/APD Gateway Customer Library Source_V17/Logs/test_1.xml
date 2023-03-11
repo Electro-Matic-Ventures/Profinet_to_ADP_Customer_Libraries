@@ -1,0 +1,7 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type='text/xsl' href='MassDataHandlerLogFile.xsl'?>
+<LogFile titleName="test_1.xml" projectName="G:\dev\Profinet_to_ADP_Customer_Libraries\output\test.xlsx" typeText="Type" messageText="Message" timeText="Time">
+  <LogEntry type="Error" dateTime="03:47:18 PM">
+    <Message>Error found while loading file G:\dev\Profinet_to_ADP_Customer_Libraries\output\test.xlsx, the file may be in use or read-only.</Message>
+  </LogEntry>
+</LogFile>

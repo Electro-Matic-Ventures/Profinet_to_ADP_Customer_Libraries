@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ISO15745Profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\XSD\GSDML-DeviceProfile-V2.25.xsd" xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile">
+    <ProfileHeader>
+        <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+        <ProfileRevision>1.00</ProfileRevision>
+        <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+        <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+        <ProfileClassID>Device</ProfileClassID>
+        <ISO15745Reference>
+            <ISO15745Part>4</ISO15745Part>
+            <ISO15745Edition>1</ISO15745Edition>
+            <ProfileTechnology>GSDML</ProfileTechnology>
+        </ISO15745Reference>
+    </ProfileHeader>
+    <ProfileBody>
+        <DeviceIdentity VendorID="0x002A" DeviceID="0x10D">
+            <InfoText TextId="EmptyString" />
+            <VendorName Value="SIEMENS" />
+        </DeviceIdentity>
+        <DeviceFunction>
+            <Family MainFamily="PLCs" ProductFamily="CPU 1215C AC/DC/Rly" />
+        </DeviceFunction>
+        <ApplicationProcess>
+            <DeviceAccessPointList>
+                <DeviceAccessPointItem ID="DAP1" DNS_CompatibleName="profinetxbtoxbadpxbgateway147e" PhysicalSlots="1" FixedInSlots="1" DeviceAccessSupported="true" ModuleIdentNumber="0x430" ObjectUUID_LocalIndex="100" RequiredSchemaVersion="V2.25" MinDeviceInterval="32" MaxSupportedRecordSize="4068" AddressAssignment="LOCAL" MultipleWriteSupported="true">
+                    <ModuleInfo>
+                        <Name TextId="DAP_Name_ID" />
+                        <InfoText TextId="DAP_Description_ID" />
+                        <OrderNumber Value="6ES7 215-1BG40-0XB0" />
+                        <SoftwareRelease Value="V4.0" />
+                    </ModuleInfo>
+                    <SubslotList>
+                        <SubslotItem SubslotNumber="32768" TextId="Interface_SubslotLabel" />
+                        <SubslotItem SubslotNumber="32769" TextId="Port32769_SubslotLabel" />
+                        <SubslotItem SubslotNumber="32770" TextId="Port32770_SubslotLabel" />
+                    </SubslotList>
+                    <IOConfigData MaxInputLength="1" MaxOutputLength="951" MaxDataLength="952" />
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem SubmoduleIdentNumber="0x100003B6" FixedInSubslots="1000" ID="VSM_2_1000">
+                            <IOData IOPS_Length="1" IOCS_Length="1">
+                                <Output>
+                                    <DataItem Length="950" DataType="OctetString" TextId="VSM_2_1000" />
+                                </Output>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="VSM_2_1000_Name" />
+                                <InfoText TextId="VSM_2_1000_Comment" />
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                    <SystemDefinedSubmoduleList>
+                        <InterfaceSubmoduleItem ID="Interface" SubslotNumber="32768" SubmoduleIdentNumber="0xf00" TextId="Interface" NetworkComponentDiagnosisSupported="true" ParameterizationDisallowed="true" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP" SupportedRT_Classes="RT_CLASS_1">
+                            <ApplicationRelations>
+                                <TimingProperties PreferredSendClock="32" SendClock="32" ReductionRatioNonPow2="1" ReductionRatioPow2="1 2 4 8 16 32 64 128 256 512" />
+                            </ApplicationRelations>
+                        </InterfaceSubmoduleItem>
+                        <PortSubmoduleItem ID="Port_1" TextId="Port_1" SubslotNumber="32769" SubmoduleIdentNumber="0xf01" ParameterizationDisallowed="true" PortDeactivationSupported="false" />
+                        <PortSubmoduleItem ID="Port_2" TextId="Port_2" SubslotNumber="32770" SubmoduleIdentNumber="0xf02" ParameterizationDisallowed="true" PortDeactivationSupported="false" />
+                    </SystemDefinedSubmoduleList>
+                </DeviceAccessPointItem>
+            </DeviceAccessPointList>
+            <ExternalTextList>
+                <PrimaryLanguage>
+                    <Text TextId="EmptyString" Value="" />
+                    <Text TextId="Interface_SubslotLabel" Value="X1" />
+                    <Text TextId="Port32769_SubslotLabel" Value="Port1" />
+                    <Text TextId="Port32770_SubslotLabel" Value="Port2" />
+                    <Text TextId="DAP_Name_ID" Value="Profinet_to_ADP_Gateway" />
+                    <Text TextId="DAP_Description_ID" Value="950 Bytes total&#xD;&#xA;-------------------------------&#xD;&#xA;50 Bytes Line Formatting&#xD;&#xA;18 Format Segments, 50 Bytes each" />
+                    <Text TextId="Interface" Value="Interface" />
+                    <Text TextId="Port_1" Value="Port 1" />
+                    <Text TextId="Port_2" Value="Port 2" />
+                    <Text TextId="VSM_2_1000_Name" Value="Message" />
+                    <Text TextId="VSM_2_1000_Comment" Value="" />
+                    <Text TextId="VSM_2_1000" Value="VSM_2_1000" />
+                </PrimaryLanguage>
+            </ExternalTextList>
+        </ApplicationProcess>
+    </ProfileBody>
+</ISO15745Profile>
