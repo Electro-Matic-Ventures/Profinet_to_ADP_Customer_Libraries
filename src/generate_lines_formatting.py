@@ -18,7 +18,3 @@ class GenerateLinesFormatting:
             for row_ in generator.generate(i):
                 table.append(row_)
         return tuple(table)
-    
-    
-t = GenerateLinesFormatting.generate()
-stop_here = True
