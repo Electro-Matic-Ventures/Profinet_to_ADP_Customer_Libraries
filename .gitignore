@@ -1,3 +1,4 @@
 plc/*
 !plc/archive
 src/__pycache__/*
+output/*
