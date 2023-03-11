@@ -1,0 +1,3 @@
+plc/*
+!plc/archive
+src/__pycache__/*
