@@ -10,6 +10,8 @@ from generate_horizontal_alignments import GenerateHorizontalAlignments
 from generate_foreground_colors import GenerateForegroundColors
 from generate_background_colors import GenerateBackgroundColors
 from generate_flashes import GenerateFlashes
+from generate_all_format_segments import GenerateAllFormatSegments
+from generate_all_lines_formatting import GenerateAllLinesFormatting
 from union_of_sections import UnionOfSections
 from file_writer import FileWriter
 
@@ -20,7 +22,9 @@ generators = [
     GenerateVerticalAlignments.generate,
     GenerateForegroundColors.generate,
     GenerateBackgroundColors.generate,
-    GenerateFlashes.generate
+    GenerateFlashes.generate,
+    GenerateAllLinesFormatting.generate,
+    GenerateAllFormatSegments.generate
 ]
 table = []
 for generator in generators:
