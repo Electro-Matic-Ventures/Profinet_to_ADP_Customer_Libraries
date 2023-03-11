@@ -24,33 +24,42 @@ class GenerateFormatSegment:
         table.append(self.__generate_background_color(format_segment))
         table.append(self.__generate_flash(format_segment))
         table.append(self.__generate_line_number(format_segment))
-        table.append(self.__generate_text(format_segment))
+        for row_ in self.__generate_text(format_segment):
+            table.append(row_)
         return tuple(table)
-    __OFFSET_BYTES = 50
+    __INTITAL_OFFSET = 50
+    __BYTES_PER_SEGMENT = 50
+
     def __generate_foreground_color(self, format_segment:int)-> TagTableRow:
         name = f'Format_Segment_{format_segment}_Font_Size_&_Weight'
-        offset = format_segment * 50
+        offset = self.__INTITAL_OFFSET + format_segment * self.__BYTES_PER_SEGMENT
         return self.__generate_row(name, format_segment, offset)
     def __generate_background_color(self, format_segment:int)-> TagTableRow:
-        name = f'Line_{format_segment}_Scroll_Speed'
-        offset = format_segment * self.__OFFSET_BYTES + 1
+        name = f'Format_Segment_{format_segment}_Scroll_Speed'
+        offset = self.__INTITAL_OFFSET + format_segment * self.__BYTES_PER_SEGMENT + 1
         return self.__generate_row(name, format_segment, offset)
     def __generate_flash(self, format_segment:int)-> TagTableRow:
-        name = f'Line_{format_segment}_Vertical_Alignment'
-        offset = format_segment * self.__OFFSET_BYTES + 2
+        name = f'Format_Segment_{format_segment}_Vertical_Alignment'
+        offset = self.__INTITAL_OFFSET + format_segment * self.__BYTES_PER_SEGMENT + 2
         return self.__generate_row(name, format_segment, offset)
     def __generate_line_number(self, format_segment:int)-> TagTableRow:
-        name = f'Line_{format_segment}_Horizontal_Alignment'
-        offset = format_segment * self.__OFFSET_BYTES + 3
+        name = f'Format_Segment_{format_segment}_Horizontal_Alignment'
+        offset = self.__INTITAL_OFFSET + format_segment * self.__BYTES_PER_SEGMENT + 3
         return self.__generate_row(name, format_segment, offset)
-    def __generate_text(self, format_segment:int)-> TagTableRow:
-        name = f'Line_{format_segment}_Hold'
-        offset = format_segment * self.__OFFSET_BYTES + 4
+    def __generate_text(self, format_segment:int)-> Tuple[TagTableRow, ...]:
+        bytes_ = []
+        text_bytes = 50 - 4
+        for i in range(text_bytes):
+            bytes_.append(self.__generate_text_byte(format_segment, i))
+        return tuple(bytes_)
+    def __generate_text_byte(self, format_segment:int, index:int)-> TagTableRow:
+        name = f'Format_Segment_{format_segment}_Text_Byte_{index}'
+        offset = self.__INTITAL_OFFSET + format_segment * self.__BYTES_PER_SEGMENT + 4 + index
         return self.__generate_row(name, format_segment, offset)
     def __generate_row(self, name:str, format_segment:int, offset:int)-> TagTableRow:
         return TagTableRow(
             name=name,
-            path=f'{self.__PATH}_{format_segment}',
+            path=f'{self.__PATH} {format_segment}',
             data_type=self.__DATA_TYPE,
             logical_address=f'$QB{offset}'
         )

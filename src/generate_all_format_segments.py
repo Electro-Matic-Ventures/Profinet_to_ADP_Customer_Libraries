@@ -19,6 +19,3 @@ class GenerateAllFormatSegments:
             for row_ in generator.generate(i):
                 table.append(row_)
         return tuple(table)
-    
-test = GenerateAllFormatSegments.generate()
-stop_here = True
