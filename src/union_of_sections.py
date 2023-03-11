@@ -22,3 +22,4 @@ class UnionOfSections:
             for row_ in section:
                 _table.append(row_)
         return tuple(_table)
+    
