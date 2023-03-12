@@ -10,6 +10,9 @@ class GenerateFormatSegment:
     """
     __PATH = "Format Segment"
     __DATA_TYPE = "Byte"
+    __direction: str
+    def __init__(self, direction:str="I"):
+        self.__direction = direction
     def generate(self, format_segment:int)-> Tuple[TagTableRow, ...]:
         """ format segment tags for tag table
 
@@ -61,6 +64,6 @@ class GenerateFormatSegment:
             name=name,
             path=f'{self.__PATH} {format_segment}',
             data_type=self.__DATA_TYPE,
-            logical_address=f'$QB{offset}'
+            logical_address=f'%{self.__direction}B{offset}'
         )
         

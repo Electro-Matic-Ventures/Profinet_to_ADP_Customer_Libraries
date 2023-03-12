@@ -42,7 +42,7 @@ class FileWriter:
             work_sheet.write(row_, 4, datum.comment)
             row_ += 1
         return
-    def write_line_formats(self, data: Tuple[TagTableRow, ...])-> int:
+    def write_line_formats(self, data: Tuple[TagTableRow, ...])-> None:
         """ write line formats section
         
             Args:
@@ -79,6 +79,7 @@ class FileWriter:
             work_sheet.write(row_, 7, datum.hmi_writeable)
             work_sheet.write(row_, 8, datum.typeobject_id)
             work_sheet.write(row_, 9, datum.version_id)
+            row_ += 1
         return
     def write_format_segment(self, segment_number: int, data: Tuple[TagTableRow, ...])-> int:
         """ creates and writes to sheet for this format segment
@@ -118,6 +119,7 @@ class FileWriter:
             work_sheet.write(row_, 7, datum.hmi_writeable)
             work_sheet.write(row_, 8, datum.typeobject_id)
             work_sheet.write(row_, 9, datum.version_id)
+            row_ += 1
         return
     def close_workbook(self)-> None:
         """ closes workbook            

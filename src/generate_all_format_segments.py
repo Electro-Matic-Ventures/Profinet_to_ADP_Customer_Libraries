@@ -9,13 +9,14 @@ class GenerateAllFormatSegments:
     """ generates the tags for all format segments
     """
     @staticmethod
-    def generate()-> Tuple[TagTableRow, ...]:
+    def generate(segment_count:int, direction:str)-> Tuple[Tuple[TagTableRow, ...], ...]:
         """ class execution method
         """
-        table = []
-        format_segment_count = 18
-        for i in range(format_segment_count):
-            generator = GenerateFormatSegment()
+        tables = []
+        for i in range(segment_count):
+            table = []
+            generator = GenerateFormatSegment(direction)
             for row_ in generator.generate(i):
                 table.append(row_)
-        return tuple(table)
+            tables.append(tuple(table))
+        return tuple(tables)

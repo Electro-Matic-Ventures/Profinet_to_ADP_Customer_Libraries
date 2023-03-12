@@ -10,7 +10,10 @@ class GenerateLineFormatting:
     """
     __PATH = "Line Formatting"
     __DATA_TYPE = "Byte"
-    def generate(self, line_number:int)-> Tuple[TagTableRow, ...]:
+    __direction: str
+    def __init__(self, direction:str="I"):
+        self.__direction = direction
+    def generate(self, line_number:int=0)-> Tuple[TagTableRow, ...]:
         """ led sign line formatting rows for the tag table
 
             Args:
@@ -51,6 +54,6 @@ class GenerateLineFormatting:
             name=name,
             path=self.__PATH,
             data_type=self.__DATA_TYPE,
-            logical_address=f'$IB{offset}'
+            logical_address=f'%{self.__direction}B{offset}'
         )
         
