@@ -9,12 +9,15 @@ class GenerateAllLinesFormatting:
     """ generates the tags for all lines formatting
     """
     @staticmethod
-    def generate(line_count:int, direction:str)-> Tuple[TagTableRow, ...]:
+    def generate(initial_offset:int, line_count:int, direction:str)-> Tuple[TagTableRow, ...]:
         """ class execution method
         """
         table = []
         for i in range(line_count):
-            generator = GenerateLineFormatting(direction)
+            generator = GenerateLineFormatting(
+                initial_offset= initial_offset, 
+                direction= direction
+            )
             for row_ in generator.generate(i):
                 table.append(row_)
         return tuple(table)
