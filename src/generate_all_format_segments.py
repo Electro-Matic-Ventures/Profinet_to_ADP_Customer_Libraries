@@ -15,7 +15,7 @@ class GenerateAllFormatSegments:
         table = []
         for i in range(segment_count):
             generator = GenerateFormatSegment(
-                initial_offset= initial_offset, 
+                initial_offset= initial_offset,
                 direction= direction
             )
             for row_ in generator.generate(i):

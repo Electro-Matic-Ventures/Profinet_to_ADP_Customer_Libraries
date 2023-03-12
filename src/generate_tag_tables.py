@@ -22,6 +22,6 @@ format_segments_tables = GenerateAllFormatSegments.generate(
 # write tables to file
 file_writer = FileWriter('./output/test.xlsx')
 file_writer.write_constants(constants_table)
-file_writer.write_line_formats(line_formattting_table)
-file_writer.write_format_segments(format_segments_tables)
+file_writer.write_plc_tags(line_formattting_table)
+file_writer.write_plc_tags(format_segments_tables)
 file_writer.close_workbook()
