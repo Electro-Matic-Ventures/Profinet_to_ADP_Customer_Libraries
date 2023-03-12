@@ -10,55 +10,118 @@ from tag_table_row import TagTableRow
 
 
 class FileWriter:
+    """ writes output excel file
     """
-        writes output excel file
-    """
-    
-    def write(file_name:str, data:Tuple[ConstantsTableRow, ...])-> None:
-        """
-            writes to file
-            @property file_name: str - path and file name to write to
-            @property data: str - text to be written to file
-            @return None
-        """
-        work_book = xlsxwriter.Workbook(file_name)
-        constants_sheet = work_book.add_worksheet(name='Constants')
-        tags_sheet = work_book.add_worksheet(name='PLC Tags')
-        row_ = 0
-        col_ = 0
-        for datum in data:
-            row_ += 1
-            if type(datum) == "ConstantsTableRow":
-                FileWriter.__constants(datum)
-                continue
-            if type(datum) == "TagTableRow":
-                FileWriter.__tags(datum)
-                continue
-        row_ += 1
-        work_book.close()
+    __work_book: xlsxwriter.Workbook
+    def __init__(self, file_name:str):
+        self.__work_book = xlsxwriter.Workbook(file_name)
+        self.__work_book.add_worksheet('Constants')
+        self.__work_book.add_worksheet('Line Formats')
         return
-        def __make_constants_sheet()->None:
-            work_sheet.write(row_, col_, 'Name')
-            work_sheet.write(row_, col_+1, 'Path')
-            work_sheet.write(row_, col_+2, 'Data Type')
-            work_sheet.write(row_, col_+3, 'Value')
-            work_sheet.write(row_, col_+4, 'Comment')
-            return
-        def __constants(row_:int, datum:ConstantsTableRow)-> None:
+    def write_constants(self, data:Tuple[ConstantsTableRow, ...])-> None:
+        """ write constants section
+            @property data (Tuple[ConstantsTableRow, ...]): data for the Constants table
+            @return (None): writes to class property __work_book
+        """
+        work_sheet = self.__work_book.get_worksheet_by_name('Constants')
+        column_labels = [
+            "Name",
+            "Path",
+            "Data Type",
+            "Value",
+            "Comment"
+        ]
+        for i, label in enumerate(column_labels):
+            work_sheet.write(0, i, label)
+        row_ = 1
+        for datum in data:
             work_sheet.write(row_, 0, datum.name)
             work_sheet.write(row_, 1, datum.path)
             work_sheet.write(row_, 2, datum.data_type)
             work_sheet.write(row_, 3, datum.value)
             work_sheet.write(row_, 4, datum.comment)
-            return
-        def __tags(row_:int, datum:TagTableRow)-> None:
-            if datum.path == "Line Formatting":
-                FileWriter.__line_formatting()
-                return
-            FileWriter.__format_segment()
-            return
-        def __line_formatting()-> None:
+            row_ += 1
+        return
+    def write_line_formats(self, data: Tuple[TagTableRow, ...])-> int:
+        """ write line formats section
+        
+            Args:
+                data (Tuple[TagTableRow, ...]): data for the line formats section of 
+                the PLC Tags table
             
-            return
-        def __format_segment()-> None:
-            return
+            Returns:
+                int: next available row index in PLC Tags worksheet
+        """
+        work_sheet = self.__work_book.get_worksheet_by_name('Line Formats')
+        column_labels = [
+            "Name",
+            "Path",
+            "Data Type",
+            "Logical Address",
+            "Comment",
+            "HMI Visible",
+            "HMI Accessible",
+            "HMI Writeable",
+            "Typeobject ID",
+            "Version ID"
+        ]
+        for i, label in enumerate(column_labels):
+            work_sheet.write(0, i, label)
+        row_ = 1
+        for datum in data:
+            work_sheet.write(row_, 0, datum.name)
+            work_sheet.write(row_, 1, datum.path)
+            work_sheet.write(row_, 2, datum.data_type)
+            work_sheet.write(row_, 3, datum.logical_address)
+            work_sheet.write(row_, 4, datum.comment)
+            work_sheet.write(row_, 5, datum.hmi_visible)
+            work_sheet.write(row_, 6, datum.hmi_accessible)
+            work_sheet.write(row_, 7, datum.hmi_writeable)
+            work_sheet.write(row_, 8, datum.typeobject_id)
+            work_sheet.write(row_, 9, datum.version_id)
+        return
+    def write_format_segment(self, segment_number: int, data: Tuple[TagTableRow, ...])-> int:
+        """ creates and writes to sheet for this format segment
+
+            Args:
+                segment_number (int): format segment number. each format segment has 
+                its own tag table. 
+                data (Tuple[TagTableRow, ...]): data for this format segment number
+
+            Returns:
+                int: next available row index in PLC Tags worksheet
+        """
+        work_sheet = self.__work_book.add_worksheet(f'Format Segment {segment_number}')
+        column_labels = [
+            "Name",
+            "Path",
+            "Data Type",
+            "Logical Address",
+            "Comment",
+            "HMI Visible",
+            "HMI Accessible",
+            "HMI Writeable",
+            "Typeobject ID",
+            "Version ID"
+        ]
+        for i, label in enumerate(column_labels):
+            work_sheet.write(0, i, label)
+        row_ = 1
+        for datum in data:
+            work_sheet.write(row_, 0, datum.name)
+            work_sheet.write(row_, 1, datum.path)
+            work_sheet.write(row_, 2, datum.data_type)
+            work_sheet.write(row_, 3, datum.logical_address)
+            work_sheet.write(row_, 4, datum.comment)
+            work_sheet.write(row_, 5, datum.hmi_visible)
+            work_sheet.write(row_, 6, datum.hmi_accessible)
+            work_sheet.write(row_, 7, datum.hmi_writeable)
+            work_sheet.write(row_, 8, datum.typeobject_id)
+            work_sheet.write(row_, 9, datum.version_id)
+        return
+    def close_workbook(self)-> None:
+        """ closes workbook            
+        """
+        self.__work_book.close()
+        return
+    

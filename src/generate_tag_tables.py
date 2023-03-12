@@ -2,32 +2,19 @@
     generates constants table for use in TIA Portal
 """
 
-
-from generate_fonts import GenerateFonts
-from generate_scroll_speeds import GenerateScrollSpeeds
-from generate_vertical_alignments import GenerateVerticalAlignments
-from generate_horizontal_alignments import GenerateHorizontalAlignments
-from generate_foreground_colors import GenerateForegroundColors
-from generate_background_colors import GenerateBackgroundColors
-from generate_flashes import GenerateFlashes
+from generate_all_constants import GenerateAllConstants
 from generate_all_format_segments import GenerateAllFormatSegments
 from generate_all_lines_formatting import GenerateAllLinesFormatting
-from union_of_sections import UnionOfSections
 from file_writer import FileWriter
 
-generators = [
-    GenerateFonts.generate,
-    GenerateScrollSpeeds.generate,
-    GenerateHorizontalAlignments.generate,
-    GenerateVerticalAlignments.generate,
-    GenerateForegroundColors.generate,
-    GenerateBackgroundColors.generate,
-    GenerateFlashes.generate,
-    GenerateAllLinesFormatting.generate,
-    GenerateAllFormatSegments.generate
-]
-table = []
-for generator in generators:
-    table.append(generator())
-table = UnionOfSections.combine(tuple(table))
-FileWriter.write('./output/test.xlsx', table)
+# generate tables
+constants_table = GenerateAllConstants.generate()
+line_formattting_table = GenerateAllLinesFormatting.generate()
+format_segments_tables = GenerateAllFormatSegments.generate()
+# write tables to file
+file_writer = FileWriter('./output/test.xlsx')
+file_writer.write_constants(constants_table)
+file_writer.write_constants(line_formattting_table)
+for i, segment in enumerate(format_segments_tables):
+    file_writer.write_format_segment(i, segment,)
+file_writer.close_workbook()
