@@ -1,0 +1,3 @@
+[submodule "Profinet_to_ADP_Gateway_Tag_Table_Generator"]
+	path = Profinet_to_ADP_Gateway_Tag_Table_Generator
+	url = https://github.com/Electro-Matic-Ventures/Profinet_to_ADP_Gateway_Tag_Table_Generator.git
