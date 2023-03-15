@@ -1,72 +1,107 @@
-REGION "MIDDLE HOLD"
-	IF #line.vertical_alignment = #profinet_encoding.middle_hold THEN
-		#"Profinet_to_ADP_Encoding.Vertical_Alignment" := CONCAT(IN1 := #to_sign,
-		IN2:= #ADP_ENCODING.middle_hold);
-		RETURN;
-	END_IF;
-END_REGION
+"ADP_Gateway_Interface.Data".format_segments[0].foreground_color
+"ADP_Gateway_Interface.Data".format_segments[0].background_colorg
+"ADP_Gateway_Interface.Data".format_segments[0].flash
+"ADP_Gateway_Interface.Data".format_segments[0].line_number
+"ADP_Gateway_Interface.Data".format_segments[0].text
 
+"ADP_Gateway_Interface.Data".format_segments[1].foreground_color
+"ADP_Gateway_Interface.Data".format_segments[1].background_color
+"ADP_Gateway_Interface.Data".format_segments[1].flash
+"ADP_Gateway_Interface.Data".format_segments[1].line_number
+"ADP_Gateway_Interface.Data".format_segments[1].text
 
-REGION "FILL HOLD"
-	IF #line.vertical_alignment = #profinet_encoding.fill_hold THEN
-		#"Profinet_to_ADP_Encoding.Vertical_Alignment" := CONCAT(IN1 := #to_sign,
-		IN2:= #ADP_ENCODING.fill_hold);
-		RETURN;
-	END_IF;
-END_REGION
+"ADP_Gateway_Interface.Data".format_segments[2].foreground_color
+"ADP_Gateway_Interface.Data".format_segments[2].background_color
+"ADP_Gateway_Interface.Data".format_segments[2].flash
+"ADP_Gateway_Interface.Data".format_segments[2].line_number
+"ADP_Gateway_Interface.Data".format_segments[2].text
 
+"ADP_Gateway_Interface.Data".format_segments[3].foreground_color
+"ADP_Gateway_Interface.Data".format_segments[3].background_color
+"ADP_Gateway_Interface.Data".format_segments[3].flash
+"ADP_Gateway_Interface.Data".format_segments[3].line_number
+"ADP_Gateway_Interface.Data".format_segments[3].text
 
-REGION "BOTTOM HOLD"
-	IF #line.vertical_alignment = #profinet_encoding.bottom_hold THEN
-		#"Profinet_to_ADP_Encoding.Vertical_Alignment" := CONCAT(IN1 := #to_sign,
-		IN2:= #ADP_ENCODING.bottom_hold);
-		RETURN;
-	END_IF;
-END_REGION
+"ADP_Gateway_Interface.Data".format_segments[4].foreground_color
+"ADP_Gateway_Interface.Data".format_segments[4].background_color
+"ADP_Gateway_Interface.Data".format_segments[4].flash
+"ADP_Gateway_Interface.Data".format_segments[4].line_number
+"ADP_Gateway_Interface.Data".format_segments[4].text
 
+"ADP_Gateway_Interface.Data".format_segments[5].foreground_color
+"ADP_Gateway_Interface.Data".format_segments[5].background_color
+"ADP_Gateway_Interface.Data".format_segments[5].flash
+"ADP_Gateway_Interface.Data".format_segments[5].line_number
+"ADP_Gateway_Interface.Data".format_segments[5].text
 
-REGION "TOP HOLD"
-	IF #line.vertical_alignment = #profinet_encoding.top_hold THEN
-		#"Profinet_to_ADP_Encoding.Vertical_Alignment" := CONCAT(IN1 := #to_sign,
-		IN2:= #ADP_ENCODING.top_hold);
-		RETURN;
-	END_IF;
-END_REGION
+"ADP_Gateway_Interface.Data".format_segments[6].foreground_color
+"ADP_Gateway_Interface.Data".format_segments[6].background_color
+"ADP_Gateway_Interface.Data".format_segments[6].flash
+"ADP_Gateway_Interface.Data".format_segments[6].line_number
+"ADP_Gateway_Interface.Data".format_segments[6].text
 
+"ADP_Gateway_Interface.Data".format_segments[7].foreground_color
+"ADP_Gateway_Interface.Data".format_segments[7].background_color
+"ADP_Gateway_Interface.Data".format_segments[7].flash
+"ADP_Gateway_Interface.Data".format_segments[7].line_number
+"ADP_Gateway_Interface.Data".format_segments[7].text
 
-REGION "BOTTOM SCROLL"
-	IF #line.vertical_alignment = #profinet_encoding.bottom_scroll THEN
-		#"Profinet_to_ADP_Encoding.Vertical_Alignment" := CONCAT(IN1 := #to_sign,
-		IN2:= #ADP_ENCODING.bottom_scroll);
-		RETURN;
-	END_IF;
-END_REGION
+"ADP_Gateway_Interface.Data".format_segments[8].foreground_color
+"ADP_Gateway_Interface.Data".format_segments[8].background_color
+"ADP_Gateway_Interface.Data".format_segments[8].flash
+"ADP_Gateway_Interface.Data".format_segments[8].line_number
+"ADP_Gateway_Interface.Data".format_segments[8].text
 
+"ADP_Gateway_Interface.Data".format_segments[9].foreground_color
+"ADP_Gateway_Interface.Data".format_segments[9].background_color
+"ADP_Gateway_Interface.Data".format_segments[9].flash
+"ADP_Gateway_Interface.Data".format_segments[9].line_number
+"ADP_Gateway_Interface.Data".format_segments[9].text
 
-REGION "FILL SCROLL"
-	IF #line.vertical_alignment = #profinet_encoding.fill_scroll THEN
-		#"Profinet_to_ADP_Encoding.Vertical_Alignment" := CONCAT(IN1 := #to_sign,
-		IN2:= #ADP_ENCODING.fill_scroll);
-		RETURN;
-	END_IF;
-END_REGION
+"ADP_Gateway_Interface.Data".format_segments[10].foreground_color
+"ADP_Gateway_Interface.Data".format_segments[10].background_color
+"ADP_Gateway_Interface.Data".format_segments[10].flash
+"ADP_Gateway_Interface.Data".format_segments[10].line_number
+"ADP_Gateway_Interface.Data".format_segments[10].text
 
+"ADP_Gateway_Interface.Data".format_segments[11].foreground_color
+"ADP_Gateway_Interface.Data".format_segments[11].background_color
+"ADP_Gateway_Interface.Data".format_segments[11].flash
+"ADP_Gateway_Interface.Data".format_segments[11].line_number
+"ADP_Gateway_Interface.Data".format_segments[11].text
 
-REGION "MIDDLE SCROLL"
-	IF #line.vertical_alignment = #profinet_encoding.middle_scroll THEN
-		#"Profinet_to_ADP_Encoding.Vertical_Alignment" := CONCAT(IN1 := #to_sign,
-		IN2:= #ADP_ENCODING.middle_scroll);
-		RETURN;
-	END_IF;
-END_REGION
+"ADP_Gateway_Interface.Data".format_segments[12].foreground_color
+"ADP_Gateway_Interface.Data".format_segments[12].background_color
+"ADP_Gateway_Interface.Data".format_segments[12].flash
+"ADP_Gateway_Interface.Data".format_segments[12].line_number
+"ADP_Gateway_Interface.Data".format_segments[12].text
 
+"ADP_Gateway_Interface.Data".format_segments[13].foreground_color
+"ADP_Gateway_Interface.Data".format_segments[13].background_color
+"ADP_Gateway_Interface.Data".format_segments[13].flash
+"ADP_Gateway_Interface.Data".format_segments[13].line_number
+"ADP_Gateway_Interface.Data".format_segments[13].text
 
-REGION "TOP SCROLL"
-	IF #line.vertical_alignment = #profinet_encoding.top_scroll THEN
-		#"Profinet_to_ADP_Encoding.Vertical_Alignment" := CONCAT(IN1 := #to_sign,
-		IN2:= #ADP_ENCODING.top_scroll);
-		RETURN;
-	END_IF;
-END_REGION
+"ADP_Gateway_Interface.Data".format_segments[14].foreground_color
+"ADP_Gateway_Interface.Data".format_segments[14].background_color
+"ADP_Gateway_Interface.Data".format_segments[14].flash
+"ADP_Gateway_Interface.Data".format_segments[14].line_number
+"ADP_Gateway_Interface.Data".format_segments[14].text
 
+"ADP_Gateway_Interface.Data".format_segments[15].foreground_color
+"ADP_Gateway_Interface.Data".format_segments[15].background_color
+"ADP_Gateway_Interface.Data".format_segments[15].flash
+"ADP_Gateway_Interface.Data".format_segments[15].line_number
+"ADP_Gateway_Interface.Data".format_segments[15].text
 
+"ADP_Gateway_Interface.Data".format_segments[16].foreground_color
+"ADP_Gateway_Interface.Data".format_segments[16].background_color
+"ADP_Gateway_Interface.Data".format_segments[16].flash
+"ADP_Gateway_Interface.Data".format_segments[16].line_number
+"ADP_Gateway_Interface.Data".format_segments[16].text
+
+"ADP_Gateway_Interface.Data".format_segments[17].foreground_color
+"ADP_Gateway_Interface.Data".format_segments[17].background_color
+"ADP_Gateway_Interface.Data".format_segments[17].flash
+"ADP_Gateway_Interface.Data".format_segments[17].line_number
+"ADP_Gateway_Interface.Data".format_segments[17].text
