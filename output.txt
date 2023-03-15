@@ -1,0 +1,72 @@
+REGION "MIDDLE HOLD"
+	IF #line.vertical_alignment = #profinet_encoding.middle_hold THEN
+		#"Profinet_to_ADP_Encoding.Vertical_Alignment" := CONCAT(IN1 := #to_sign,
+		IN2:= #ADP_ENCODING.middle_hold);
+		RETURN;
+	END_IF;
+END_REGION
+
+
+REGION "FILL HOLD"
+	IF #line.vertical_alignment = #profinet_encoding.fill_hold THEN
+		#"Profinet_to_ADP_Encoding.Vertical_Alignment" := CONCAT(IN1 := #to_sign,
+		IN2:= #ADP_ENCODING.fill_hold);
+		RETURN;
+	END_IF;
+END_REGION
+
+
+REGION "BOTTOM HOLD"
+	IF #line.vertical_alignment = #profinet_encoding.bottom_hold THEN
+		#"Profinet_to_ADP_Encoding.Vertical_Alignment" := CONCAT(IN1 := #to_sign,
+		IN2:= #ADP_ENCODING.bottom_hold);
+		RETURN;
+	END_IF;
+END_REGION
+
+
+REGION "TOP HOLD"
+	IF #line.vertical_alignment = #profinet_encoding.top_hold THEN
+		#"Profinet_to_ADP_Encoding.Vertical_Alignment" := CONCAT(IN1 := #to_sign,
+		IN2:= #ADP_ENCODING.top_hold);
+		RETURN;
+	END_IF;
+END_REGION
+
+
+REGION "BOTTOM SCROLL"
+	IF #line.vertical_alignment = #profinet_encoding.bottom_scroll THEN
+		#"Profinet_to_ADP_Encoding.Vertical_Alignment" := CONCAT(IN1 := #to_sign,
+		IN2:= #ADP_ENCODING.bottom_scroll);
+		RETURN;
+	END_IF;
+END_REGION
+
+
+REGION "FILL SCROLL"
+	IF #line.vertical_alignment = #profinet_encoding.fill_scroll THEN
+		#"Profinet_to_ADP_Encoding.Vertical_Alignment" := CONCAT(IN1 := #to_sign,
+		IN2:= #ADP_ENCODING.fill_scroll);
+		RETURN;
+	END_IF;
+END_REGION
+
+
+REGION "MIDDLE SCROLL"
+	IF #line.vertical_alignment = #profinet_encoding.middle_scroll THEN
+		#"Profinet_to_ADP_Encoding.Vertical_Alignment" := CONCAT(IN1 := #to_sign,
+		IN2:= #ADP_ENCODING.middle_scroll);
+		RETURN;
+	END_IF;
+END_REGION
+
+
+REGION "TOP SCROLL"
+	IF #line.vertical_alignment = #profinet_encoding.top_scroll THEN
+		#"Profinet_to_ADP_Encoding.Vertical_Alignment" := CONCAT(IN1 := #to_sign,
+		IN2:= #ADP_ENCODING.top_scroll);
+		RETURN;
+	END_IF;
+END_REGION
+
+
