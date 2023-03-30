@@ -41,7 +41,7 @@ class GenerateFormatSegment:
         return tuple(table)
     
     def __generate_foreground_color(self, format_segment:int)-> TagTableRow:
-        name = f'Format_Segment_{format_segment}_Font_Size_&_Weight'
+        name = f'Segment_Format_{format_segment}_FG_Color'
         row_ = self.__generate_row(
             name= name,
             format_segment= format_segment,
@@ -50,7 +50,7 @@ class GenerateFormatSegment:
         return row_
     
     def __generate_background_color(self, format_segment:int)-> TagTableRow:
-        name = f'Format_Segment_{format_segment}_Scroll_Speed'
+        name = f'Segment_Format_{format_segment}_BG_Color'
         row_ = self.__generate_row(
             name= name,
             format_segment= format_segment,
@@ -59,7 +59,7 @@ class GenerateFormatSegment:
         return row_
     
     def __generate_flash(self, format_segment:int)-> TagTableRow:
-        name = f'Format_Segment_{format_segment}_Vertical_Alignment'
+        name = f'Segment_Format_{format_segment}_Flash'
         row_ = self.__generate_row(
             name= name,
             format_segment= format_segment,
@@ -68,7 +68,7 @@ class GenerateFormatSegment:
         return row_
     
     def __generate_line_number(self, format_segment:int)-> TagTableRow:
-        name = f'Format_Segment_{format_segment}_Horizontal_Alignment'
+        name = f'Segment_Format_{format_segment}_Line_Number'
         row_ = self.__generate_row(
             name= name,
             format_segment= format_segment,
@@ -84,7 +84,7 @@ class GenerateFormatSegment:
         return tuple(bytes_)
     
     def __generate_text_byte(self, format_segment:int, index:int)-> TagTableRow:
-        name = f'Format_Segment_{format_segment}_Text_Byte_{index}'
+        name = f'Segment_Format_{format_segment}_Text_Byte_{index}'
         row_ = self.__generate_row(
             name= name,
             format_segment= format_segment,

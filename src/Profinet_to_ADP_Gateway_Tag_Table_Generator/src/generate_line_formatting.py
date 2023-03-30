@@ -31,33 +31,18 @@ class GenerateLineFormatting:
                 Tuple[TagTableRow, ...]: rows to be appended to tag table
         """
         table = []
-        self.__line_offset = line_number * 5
+        self.__line_offset = line_number * 2
         table.append(self.__generate_font_row(line_number))
-        table.append(self.__generate_scroll_speed_row(line_number))
-        table.append(self.__generate_vertical_alignment_row(line_number))
         table.append(self.__generate_horizontal_alignment_row(line_number))
-        table.append(self.__generate_hold_row(line_number))
         return tuple(table)
     
     def __generate_font_row(self, line_number:int)-> TagTableRow:
         name = f'Line_{line_number}_Font_Size_&_Weight'
         return self.__generate_row(name=name, offset=0)
     
-    def __generate_scroll_speed_row(self, line_number:int)-> TagTableRow:
-        name = f'Line_{line_number}_Scroll_Speed'
-        return self.__generate_row(name=name, offset=1)
-    
-    def __generate_vertical_alignment_row(self, line_number:int)-> TagTableRow:
-        name = f'Line_{line_number}_Vertical_Alignment'
-        return self.__generate_row(name=name, offset=2)
-    
     def __generate_horizontal_alignment_row(self, line_number:int)-> TagTableRow:
         name = f'Line_{line_number}_Horizontal_Alignment'
-        return self.__generate_row(name=name, offset=3)
-    
-    def __generate_hold_row(self, line_number:int)-> TagTableRow:
-        name = f'Line_{line_number}_Hold'
-        return self.__generate_row(name=name, offset=4)
+        return self.__generate_row(name=name, offset=1)
     
     def __generate_row(self, name:str, offset:int)-> TagTableRow:
         total_offset = self.__INITIAL_OFFSET + self.__line_offset + offset
